@@ -5,7 +5,7 @@ html_document:
 keep_md: true
 ---
 # Reproducible Research: Peer Assessment 1
-This project demonstrates the use of the knitr package in aid of reproducible research. It is a required project for the [Reproducible Research] (https://www.coursera.org/learn/reproducible-research/home) course hosted on Coursera.
+This project demonstrates the use of the knitr package in aid of reproducible research. It is a required project for the [Reproducible Research](https://www.coursera.org/learn/reproducible-research/home) course hosted on Coursera.
 
 ## Loading and preprocessing the data
 The "activity.zip" that contains the data is included in the GIT repository. Unzip the file if needed.
