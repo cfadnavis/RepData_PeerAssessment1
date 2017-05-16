@@ -68,6 +68,10 @@ Plot the 5-minute intervals vs. the average number of steps.
 qplot(by_int$interval,by_int$mean_steps,data=by_interval, geom="line")
 ```
 
+```
+## Error in eval(expr, envir, enclos): object 'by_int' not found
+```
+
 ![plot of chunk plot_steps_by_interval](figure/plot_steps_by_interval-1.png)
 
 Calculate the interval, on average across all days, that contains the maximum number of steps.
@@ -135,13 +139,13 @@ Calculate the average number of steps taken, averaged across all weekdays or wee
 ```r
 by_day_type <- d_day_type %>%
     group_by(day_type,interval) %>%
-    summarise(total_steps=sum(steps)) %>%
-    select (day_type,interval,total_steps)
+    summarise(avg_steps=mean(steps)) %>%
+    select (day_type,interval,avg_steps)
 ```
 Create a panel plot to depict the average number of steps per interval, comparing the weekend and weekday activity patterns.
 
 ```r
-qplot(x=interval,y=total_steps,data=by_day_type,facets = day_type~.,geom="line") 
+qplot(x=interval,y=avg_steps,data=by_day_type,facets = day_type~.,geom="line") 
 ```
 
 ![plot of chunk plot_day_type](figure/plot_day_type-1.png)

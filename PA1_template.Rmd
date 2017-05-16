@@ -115,12 +115,12 @@ Calculate the average number of steps taken, averaged across all weekdays or wee
 ```{r average_day_type}
 by_day_type <- d_day_type %>%
     group_by(day_type,interval) %>%
-    summarise(total_steps=sum(steps)) %>%
-    select (day_type,interval,total_steps)
+    summarise(avg_steps=mean(steps)) %>%
+    select (day_type,interval,avg_steps)
 ```
 Create a panel plot to depict the average number of steps per interval, comparing the weekend and weekday activity patterns.
 ```{r plot_day_type}
-qplot(x=interval,y=total_steps,data=by_day_type,facets = day_type~.,geom="line") 
+qplot(x=interval,y=avg_steps,data=by_day_type,facets = day_type~.,geom="line") 
 ```
 
 Clearly, there was more activity during the weekdays than the weekends. Also, while the activity peaks early in the day during weekdays, during weekends, the activity appears to be evenly spread between the [750, 2000] interval range.
