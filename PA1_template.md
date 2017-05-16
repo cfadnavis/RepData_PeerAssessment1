@@ -65,11 +65,7 @@ by_interval <- d %>%
 Plot the 5-minute intervals vs. the average number of steps.
 
 ```r
-qplot(by_int$interval,by_int$mean_steps,data=by_interval, geom="line")
-```
-
-```
-## Error in eval(expr, envir, enclos): object 'by_int' not found
+qplot(by_interval$interval,by_interval$mean_steps,data=by_interval, geom="line")
 ```
 
 ![plot of chunk plot_steps_by_interval](figure/plot_steps_by_interval-1.png)

@@ -56,7 +56,7 @@ by_interval <- d %>%
 ```
 Plot the 5-minute intervals vs. the average number of steps.
 ```{r plot_steps_by_interval}
-qplot(by_int$interval,by_int$mean_steps,data=by_interval, geom="line")
+qplot(by_interval$interval,by_interval$mean_steps,data=by_interval, geom="line")
 ```
 
 Calculate the interval, on average across all days, that contains the maximum number of steps.
